@@ -1,0 +1,16 @@
+{
+  "name": "test",
+  "description": "test",
+  "version": "1.0.0",
+  "dependencies": {
+    "systemjs": "latest"
+  },
+  "devDependencies": {
+    "lite-server": "latest",
+    "typescript" : "latest"
+  },
+  "scripts": {
+    "serve": "lite-server -c=bs-config.json",
+    "build" : "tsc -p src"
+  }
+}
