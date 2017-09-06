@@ -3,7 +3,14 @@
   "description": "test",
   "version": "1.0.0",
   "dependencies": {
-    "systemjs": "latest"
+    "systemjs": "latest",
+    "@angular/common": "latest",
+    "@angular/compiler": "latest",
+    "@angular/core" : "latest",
+    "@angular/platform-browser": "latest",
+    "@angular/platform-browser-dynamic": "latest",
+    "rxjs": "latest",
+    "zone.js": "latest"
   },
   "devDependencies": {
     "lite-server": "latest",
