@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 // don't know why, but is required
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './appComponent';
+import { AppComponent } from './MainComponent';
 
 @NgModule({
   imports:      [ BrowserModule ],
