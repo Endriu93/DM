@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ComponentFactoryResolver, OnDestroy, ViewChild} from '@angular/core';
-import {MainService} from "./MainService";
-import {TopHostDirective} from "./TopHostDirective";
+import {MainService} from "../serviceAbstract/MainService";
+import {TopHostDirective} from "../directive/TopHostDirective";
 import {LoginComponent} from "./LoginComponent";
 import {DashboardComponent} from "./DashboardComponent";
 

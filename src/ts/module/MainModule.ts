@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 // don't know why, but is required
 import { BrowserModule } from '@angular/platform-browser';
-import { MainComponent } from './MainComponent';
-import {MainService} from "./MainService";
-import {MainServiceImpl} from "./MainServiceImpl";
-import {TopHostDirective} from "./TopHostDirective";
-import {LoginComponent} from "./LoginComponent";
-import {DashboardComponent} from "./DashboardComponent";
+import { MainComponent } from '../component/MainComponent';
+import {MainService} from "../serviceAbstract/MainService";
+import {MainServiceImpl} from "../service/MainServiceImpl";
+import {TopHostDirective} from "../directive/TopHostDirective";
+import {LoginComponent} from "../component/LoginComponent";
+import {DashboardComponent} from "../component/DashboardComponent";
 
 @NgModule({
   imports:      [ BrowserModule ],

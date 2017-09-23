@@ -1,4 +1,4 @@
-import {MainService} from "./MainService";
+import {MainService} from "../serviceAbstract/MainService";
 
 export class MainServiceImpl extends MainService
 {
