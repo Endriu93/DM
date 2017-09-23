@@ -1,2 +1,5 @@
-<div> -- login component --</div>
-<button (click)="onUserLogged()">simulate correct login</button>
+<label for="username">Username</label>
+<input id="username" (keyup)="onUsername($event)">
+<label for="password">Password</label>
+<input id="password" (keyup)="onPassword($event)">
+<button (click)="onSubmit()">Submit</button>
