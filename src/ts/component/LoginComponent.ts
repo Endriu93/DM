@@ -1,8 +1,7 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
-    template: '<div> -- login component --</div>' +
-                ' <button (click)="onUserLogged()">simulate correct login</button>'
+    templateUrl: 'html/loginComponent.html'
 })
 export class LoginComponent {
 

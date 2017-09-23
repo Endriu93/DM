@@ -1,8 +1,7 @@
 import {Component, EventEmitter} from '@angular/core';
 
 @Component({
-    template: '<div> -- dashboard component --</div>' +
-    ' <button (click)="onUserLoggedOut()">simulate log out</button>'
+    templateUrl: 'html/dashboardComponent.html'
 })
 export class DashboardComponent {
     onLoggedOut: EventEmitter<boolean> = new EventEmitter<boolean>();
