@@ -5,37 +5,55 @@ import {LoginComponent} from "./LoginComponent";
 import {DashboardComponent} from "./DashboardComponent";
 
 @Component({
-  selector: 'main-component',
-  template: '<div>Component_test, user is logged + {{mainService.isUserAuthenticated()}}</div>' +
-            ' <ng-template top-host>  </ng-template> '
+    selector: 'main-component',
+    template: '<div>Component_test, user is logged + {{mainService.isUserAuthenticated()}}</div>' +
+    ' <ng-template top-host>  </ng-template> '
 })
 export class MainComponent implements AfterViewInit, OnDestroy {
 
-  mainService: MainService;
-  @ViewChild(TopHostDirective) topHost: TopHostDirective;
+    mainService: MainService;
+    @ViewChild(TopHostDirective) topHost: TopHostDirective;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver, service: MainService) {
-    this.mainService = service;
-  }
+    constructor(private componentFactoryResolver: ComponentFactoryResolver, service: MainService) {
+        this.mainService = service;
+    }
 
-  ngAfterViewInit() {
-    var component: any = LoginComponent;
+    ngAfterViewInit() {
+        if (this.mainService.isUserAuthenticated() == true)
+            this.loadDashboardComponent();
+        else
+            this.loadLoginComponent();
+    }
 
-    if(this.mainService.isUserAuthenticated()==true)
-      component = DashboardComponent;
+    loadDashboardComponent() {
+        var componentInstance: DashboardComponent = this.loadComponent(DashboardComponent).instance;
+        componentInstance.onLoggedOut.subscribe((evt: any) => this.onUserLoggedOut())
+    }
 
-    this.loadComponent(component);
-  }
+    loadLoginComponent() {
+        var componentInstance: LoginComponent = this.loadComponent(LoginComponent).instance;
+        componentInstance.onLogged.subscribe((evt: any) => this.onUserLogged())
+    }
 
-  ngOnDestroy(): void {
-  }
+    onUserLogged() {
+        // alert("MainComponent.onUserLogged()");
+        this.loadDashboardComponent();
+    }
 
-  loadComponent(component: any) {
-    let componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
+    onUserLoggedOut() {
+        // alert("MainComponent.onUserLoggedOut()");
+        this.loadLoginComponent();
+    }
 
-    let viewContainerRef = this.topHost.viewContainerRef;
-    viewContainerRef.clear();
+    ngOnDestroy(): void {
+    }
 
-    let componentRef = viewContainerRef.createComponent(componentFactory);
-  }
+    loadComponent(component: any): any {
+        let componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
+
+        let viewContainerRef = this.topHost.viewContainerRef;
+        viewContainerRef.clear();
+
+        return viewContainerRef.createComponent(componentFactory);
+    }
 }
