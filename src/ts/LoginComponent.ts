@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 
 @Component({
-    template: '<div>login component</div>'
+    template: '<div> -- login component --</div>'
 })
-export class LoginComponent {      
+export class LoginComponent {
 
 }
