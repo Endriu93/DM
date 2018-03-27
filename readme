@@ -1,0 +1,6 @@
+transpilacja:
+    - npm run build
+
+uruchomienie lokalnego serwera:
+    - npm run serve
+    - http://localhost:3000/
