@@ -1,8 +1,8 @@
 import {AfterViewInit, Component, ComponentFactoryResolver, OnDestroy, ViewChild} from '@angular/core';
 import {MainService} from "../serviceAbstract/MainService";
 import {TopHostDirective} from "../directive/TopHostDirective";
-import {LoginComponent} from "./LoginComponent";
-import {DashboardComponent} from "./DashboardComponent";
+import {LoginComponent} from "./login/LoginComponent";
+import {DashboardComponent} from "./dashboard/DashboardComponent";
 
 @Component({
     selector: 'main-component',

@@ -1,0 +1,30 @@
+.example-full-width {
+  width: 100%;
+}
+
+.not-full-width {
+  min-width: 200px;
+}
+
+.example-fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.flex-container {
+  /*height: 100%;*/
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: -webkit-flex; /* Safari */
+  -webkit-flex-direction: row; /* Safari 6.1+ */
+  display: flex;
+}

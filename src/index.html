@@ -9,9 +9,10 @@
   <script src="node_modules/core-js/client/shim.min.js"></script>
   <!-- zone is required for shim.min.js -->
   <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="systemjs.config.js"></script>
 
   <script>
-  SystemJS.config({
+  /*SystemJS.config({
     // transpiler is reduntant as typescript modules are transpiled to 'amd' format
     transpiler: false,
     packages: {
@@ -42,8 +43,9 @@
         '@angular/cdk': 'npm:@angular/cdk/bundles/cdk.umd.js',
         // rxjs required by zoneJS
       'rxjs':                      'npm:rxjs',
+        '@angular':                   'npm:@angular'
     }
-  });
+  });*/
   // here we need to load bootstrap module
   SystemJS.import('ts/main').then(function (m) {
     console.log(m);

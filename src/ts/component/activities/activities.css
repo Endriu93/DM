@@ -1,0 +1,46 @@
+h3 {
+  text-align: center;
+}
+
+.flex-container {
+  /*height: 100%;*/
+  /*padding: 0;*/
+  /*margin: 0;*/
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  width: 100%;
+}
+
+/*.list_item {
+  height: 48px;
+}
+
+.document_name {
+  flex: 6;
+}
+
+.document_added_by {
+  flex: 2;
+}
+
+.document_category {
+  flex: 2;
+}*/
+
+.bold {
+  font-weight: bold;
+}
+
+.added {
+  color: darkgreen;
+}
+
+.deleted {
+  color: darkred;
+}

@@ -1,0 +1,9 @@
+<form class="select">
+  <md-select placeholder="wybierz kategorię" [(ngModel)]="selectedValue" name="food" class="select">
+    <md-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </md-option>
+  </md-select>
+
+  <!--<p> Selected value: {{selectedValue}} </p>-->
+</form>

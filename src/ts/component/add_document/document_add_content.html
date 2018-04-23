@@ -1,0 +1,17 @@
+<h1 md-dialog-title>Dodawanie dokumentu</h1>
+<div md-dialog-content class="flex-outer">
+  <div class="flex-container">
+    <div class="item">Dokument1.pdf</div>
+    <button md-raised-button color="primary" class="item">wybierz dokument</button>
+  </div>
+  <div class="flex-container">
+    <md-checkbox>przydziel automatycznie (dokładność: <span class="added">75%</span>)</md-checkbox>
+  </div>
+  <div class="flex-container">
+    <select-category></select-category>
+  </div>
+</div>
+<div md-dialog-actions class="footer">
+  <button md-button (click)="dialogRef.close('Option 1')" color="primary" class="bold">Dodaj</button>
+  <button md-button (click)="dialogRef.close('Option 2')" class="bold">Anuluj</button>
+</div>
