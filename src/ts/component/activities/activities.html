@@ -1,9 +1,9 @@
 <h3>Lista aktywności</h3>
-<md-divider></md-divider>
+<mat-divider></mat-divider>
 <!--<documents-search></documents-search>-->
 <!--<md-divider></md-divider>-->
 
-<md-list>
+<mat-list>
   <!--<md-list-item class="list_item">
     <div class="flex-container">
       <div md-line class="document_name">nazwa dokumentu</div>
@@ -11,16 +11,16 @@
       <div md-line class="document_added_by">dodany przez</div>
     </div>
   </md-list-item>-->
-  <md-list-item *ngFor="let item of documents" class="list_item" >
-    <md-icon md-list-icon>{{item.icon}}</md-icon>
+  <mat-list-item *ngFor="let item of documents" class="list_item" >
+    <mat-icon mat-list-icon>{{item.icon}}</mat-icon>
     <!--<div class="flex-container">
       <div md-line class="document_name">{{item.name}}</div>
       <div md-line class="document_category">{{item.category}}</div>
       <div md-line class="document_added_by">{{item.addedBy}}</div>
     </div>-->
     <div><span class="bold">{{item.date}}</span> Użytkownik <span class="bold">{{item.user}}</span> <span class={{item.actionClass}}>{{item.action}}</span> dokument: <span class="bold">{{item.name}}</span></div>
-  </md-list-item>
-</md-list>
+  </mat-list-item>
+</mat-list>
 
 <!--<md-grid-list cols="4">
   <md-grid-tile

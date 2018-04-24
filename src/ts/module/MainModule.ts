@@ -27,10 +27,12 @@ import {DocumentAddButton, DocumentAddDialog} from "../component/add_document/do
 import {SelectCategoryComponent} from "../component/add_document/select_category/select_category.component";
 import {PanelComponent} from "../component/panel/app.panel.component";
 import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   imports:      [ BrowserModule, MatButtonModule, BrowserAnimationsModule , MatInputModule, MatCardModule, MatGridListModule,
-    MatDialogModule, MatCheckboxModule, MatSelectModule, FormsModule,MatIconModule ],
+    MatDialogModule, MatCheckboxModule, MatSelectModule, FormsModule,MatIconModule,MatListModule, MatToolbarModule ],
   // here we place all used components in appliation
   declarations: [ MainComponent,TopHostDirective, LoginComponent, DashboardComponent,
     SideNavComponent, DocumentsComponent, ToolbarComponent, DocumentsSearchComponent, ActivitiesComponent
