@@ -4,3 +4,10 @@ transpilacja:
 uruchomienie lokalnego serwera:
     - npm run serve
     - http://localhost:3000/
+
+common errors:
+- GET http://localhost:3000/node_modules/@angular/material/sidenav.js 404 (Not Found)
+  - problem występuje podczas ładowania komponentów przez SystemJS na starcie
+  - w celu rozwiązania problemu należy dodać wpis w pliku systemjs.config.js
+
+- po uruchomieniu WebStorma należy ponowić skrypt build:watch, żeby automatycznie budował

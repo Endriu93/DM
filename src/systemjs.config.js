@@ -44,6 +44,7 @@
         'material/core',
         'material/list',
         'material/toolbar',
+        'material/sidenav',
         'cdk',
         'cdk/bidi',
         'cdk/coercion',
