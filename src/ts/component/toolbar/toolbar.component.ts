@@ -2,7 +2,7 @@
  * Created by Andrzej on 06.05.2017.
  */
 import { Component } from '@angular/core';
-// import { SideNavMenuItem } from './side-nav-menu-item';
+// import { SideNavItem } from './side-nav-menu-item';
 
 @Component({
   selector: 'toolbar',
@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 })
 export class ToolbarComponent  {
   appName: string = 'Documents Manager';
-  // menuItems: SideNavMenuItem[] = [
+  // menuItems: SideNavItem[] = [
   //   {name: 'Lista Dokumentów' , icon: 'folder_open'},
   //   {name: 'Lista Aktywności' , icon: 'event'}
   // ];

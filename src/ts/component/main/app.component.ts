@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {SideNavMenuItem} from "../side-nav/side-nav-menu-item";
+import {SideNavItem} from "../side-nav/SideNavItem";
 
 @Component({
   selector: 'my-app',
@@ -7,11 +7,11 @@ import {SideNavMenuItem} from "../side-nav/side-nav-menu-item";
   styleUrls: ['./app.css'],
 })
 export class AppComponent {
-  selecteditem: SideNavMenuItem;
+  selecteditem: SideNavItem;
   name = 'Angular';
   var = this;
 
-  public onMenuItemSelected(item: SideNavMenuItem)
+  public onMenuItemSelected(item: SideNavItem)
   {
 
   }

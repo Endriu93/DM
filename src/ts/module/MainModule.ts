@@ -19,7 +19,7 @@ import {MatDialogModule} from '@angular/material';
 import {MatCheckboxModule} from '@angular/material';
 import {MatSelectModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
-import {SideNavComponent} from "../component/side-nav/app.side-nav.component";
+import {SideNavComponent} from "../component/side-nav/SideNavComponent";
 import {ToolbarComponent} from "../component/toolbar/toolbar.component";
 import {DocumentsSearchComponent} from "../component/documents-search/documents-search.component";
 import {ActivitiesComponent} from "../component/activities/activities.component";

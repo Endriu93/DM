@@ -2,3 +2,5 @@ node_modules/
 src/out
 .idea/
 npm-debug.log
+src/ts/** /*.js
+src/ts/component/side-nav/SideNavComponent.js

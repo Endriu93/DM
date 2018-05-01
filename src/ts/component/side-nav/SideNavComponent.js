@@ -7,36 +7,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-define(["require", "exports", "@angular/core", "../main/app.component"], function (require, exports, core_1, app_component_1) {
+define(["require", "exports", "@angular/core"], function (require, exports, core_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var SideNavComponent = /** @class */ (function () {
         function SideNavComponent() {
-            this.menuItems = [
-                { name: 'Lista Dokumentów', icon: 'folder_open' },
-                { name: 'Lista Aktywności', icon: 'event' }
-            ];
             this.userName = 'User 11';
             this.groupName = 'Group 1';
         }
-        SideNavComponent.prototype.onItemClick = function (item) {
-            alert(item.name);
-            // parent.onMenuItemSelected(item);
-            // parent.
-        };
         __decorate([
-            core_1.Input(),
-            __metadata("design:type", app_component_1.AppComponent)
-        ], SideNavComponent.prototype, "parent", void 0);
+            core_1.Input('handler'),
+            __metadata("design:type", Object)
+        ], SideNavComponent.prototype, "menuHandler", void 0);
         SideNavComponent = __decorate([
             core_1.Component({
                 selector: 'side-nav',
-                templateUrl: './app.side-nav.html',
-                styleUrls: ['./app.side-nav.css']
+                templateUrl: './sideNav.html',
+                styleUrls: ['./sideNav.css']
             })
         ], SideNavComponent);
         return SideNavComponent;
     }());
     exports.SideNavComponent = SideNavComponent;
 });
-//# sourceMappingURL=app.side-nav.component.js.map
+//# sourceMappingURL=SideNavComponent.js.map

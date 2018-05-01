@@ -4,6 +4,6 @@ export class MainServiceImpl extends MainService
 {
     isUserAuthenticated(): boolean {
         // TODO
-        return false;
+        return true;
     }
 }

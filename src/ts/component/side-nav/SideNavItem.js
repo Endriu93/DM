@@ -4,11 +4,11 @@ define(["require", "exports"], function (require, exports) {
     /**
      * Created by Andrzej on 06.05.2017.
      */
-    var SideNavMenuItem = /** @class */ (function () {
-        function SideNavMenuItem() {
+    var SideNavItem = /** @class */ (function () {
+        function SideNavItem() {
         }
-        return SideNavMenuItem;
+        return SideNavItem;
     }());
-    exports.SideNavMenuItem = SideNavMenuItem;
+    exports.SideNavItem = SideNavItem;
 });
-//# sourceMappingURL=side-nav-menu-item.js.map
+//# sourceMappingURL=SideNavItem.js.map

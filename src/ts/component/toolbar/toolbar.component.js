@@ -7,11 +7,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 define(["require", "exports", "@angular/core"], function (require, exports, core_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    // import { SideNavMenuItem } from './side-nav-menu-item';
+    // import { SideNavItem } from './side-nav-menu-item';
     var ToolbarComponent = /** @class */ (function () {
         function ToolbarComponent() {
             this.appName = 'Documents Manager';
-            // menuItems: SideNavMenuItem[] = [
+            // menuItems: SideNavItem[] = [
             //   {name: 'Lista Dokumentów' , icon: 'folder_open'},
             //   {name: 'Lista Aktywności' , icon: 'event'}
             // ];

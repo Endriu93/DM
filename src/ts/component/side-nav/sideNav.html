@@ -13,7 +13,7 @@
   </button>
   <mat-divider></mat-divider>
   <!--<h3 md-subheader>menu</h3>-->
-  <button mat-button *ngFor="let item of menuItems" (click)="onItemClick(item)">
+  <button mat-button *ngFor="let item of menuHandler.onCreateItems1()" (click)="menuHandler.onItemClick(item)">
     <mat-list-item>
       <mat-icon mat-list-icon>{{item.icon}}</mat-icon>
       <h4 mat-line>{{item.name}}</h4>
@@ -21,10 +21,10 @@
   </button>
   <mat-divider></mat-divider>
   <!--<h3 md-subheader>Notes</h3>-->
-  <button mat-button>
+  <button mat-button *ngFor="let item of menuHandler.onCreateItems2()" (click)="menuHandler.onItemClick(item)">
     <mat-list-item>
-      <mat-icon mat-list-icon>power_settings_new</mat-icon>
-      <h4 mat-line>Wyloguj</h4>
+      <mat-icon mat-list-icon>{{item.icon}}</mat-icon>
+      <h4 mat-line>{{item.name}}</h4>
     </mat-list-item>
   </button>
 </mat-list>

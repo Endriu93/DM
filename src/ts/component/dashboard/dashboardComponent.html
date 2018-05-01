@@ -1,9 +1,10 @@
 <toolbar></toolbar>
 <mat-sidenav-container>
     <mat-sidenav mode="side" opened="true" class="md-elevation-z1">
+
         <mat-card class="md-elevation-z10">
             <!--<side-nav [parent]="var" >Loading SideNav</side-nav>-->
-            <side-nav>Loading SideNav</side-nav>
+            <side-nav [handler]="this">Loading SideNav</side-nav>
         </mat-card>
     </mat-sidenav>
     <mat-card class="md-elevation-z10">

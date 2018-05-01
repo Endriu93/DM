@@ -11,3 +11,6 @@ common errors:
   - w celu rozwiązania problemu należy dodać wpis w pliku systemjs.config.js
 
 - po uruchomieniu WebStorma należy ponowić skrypt build:watch, żeby automatycznie budował
+
+- nie można zaimportować innej klasy
+    - klasa nie ma flagi export
