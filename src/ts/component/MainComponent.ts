@@ -6,8 +6,7 @@ import {DashboardComponent} from "./dashboard/DashboardComponent";
 
 @Component({
     selector: 'main-component',
-    template: '<div>Component_test, user is logged + {{mainService.isUserAuthenticated()}}</div>' +
-    ' <ng-template top-host>  </ng-template> '
+    template: ' <ng-template top-host>  </ng-template> '
 })
 export class MainComponent implements AfterViewInit, OnDestroy {
 

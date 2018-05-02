@@ -1,6 +1,7 @@
 import {Component, EventEmitter} from "@angular/core";
 import {SideNavHandler} from "../side-nav/SideNavHandler";
 import {SideNavItem} from "../side-nav/SideNavItem";
+import {ToolbarHandler} from "../toolbar/ToolbarHandler";
 
 enum Menu {DOCS,ACTS,LOGOUT}
 
@@ -8,8 +9,9 @@ enum Menu {DOCS,ACTS,LOGOUT}
     templateUrl: 'ts/component/dashboard/dashboardComponent.html',
     styleUrls: ['./dashboard.css']
 })
-export class DashboardComponent implements SideNavHandler {
+export class DashboardComponent implements SideNavHandler, ToolbarHandler {
     onLoggedOut: EventEmitter<boolean> = new EventEmitter<boolean>();
+    drawerOpen: Boolean = false;
 
     public onUserLoggedOut(): void {
         // alert("user Logged out!");
@@ -36,5 +38,10 @@ export class DashboardComponent implements SideNavHandler {
                 break;
             }
         }
+    }
+
+    onMenuClick(): any {
+        console.log("onMenuClick");
+        this.drawerOpen = !this.drawerOpen;
     }
 }
