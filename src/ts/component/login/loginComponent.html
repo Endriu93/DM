@@ -1,5 +1,17 @@
-<label for="username">Username</label>
+<div class="wrapper">
+    <div class="form-signin">
+        <h2 class="form-signin-heading">Please login</h2>
+        <input id="username" (keyup)="onUsername($event)" type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus=""  />
+        <input id="password" (keyup)="onPassword($event)" type="password" class="form-control" name="password" placeholder="Password" required=""/>
+        <label class="checkbox">
+            <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+        </label>
+        <button class="btn btn-lg btn-primary btn-block" (click)="onSubmit()">Login</button>
+    </div>
+</div>
+
+<!--<label for="username">Username</label>
 <input id="username" (keyup)="onUsername($event)">
 <label for="password">Password</label>
 <input id="password" (keyup)="onPassword($event)">
-<button (click)="onSubmit()">Submit</button>
+<button (click)="onSubmit()">Submit</button>-->

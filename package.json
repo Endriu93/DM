@@ -20,7 +20,8 @@
   },
   "devDependencies": {
     "lite-server": "2.3.0",
-    "typescript": "2.8.3"
+    "typescript": "2.8.3",
+    "bourbon": "5.0.0"
   },
   "scripts": {
     "serve": "lite-server -c=bs-config.json",

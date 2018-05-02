@@ -1,7 +1,8 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
-    templateUrl: 'ts/component/login/loginComponent.html'
+    templateUrl: 'ts/component/login/loginComponent.html',
+    styleUrls: ['./login.css']
 })
 export class LoginComponent {
     onLogged: EventEmitter<boolean> = new EventEmitter<boolean>();
