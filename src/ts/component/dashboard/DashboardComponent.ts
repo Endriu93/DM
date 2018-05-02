@@ -30,7 +30,7 @@ export class DashboardComponent implements SideNavHandler, ToolbarHandler {
     }
 
     onItemClick(item: SideNavItem): any {
-        console.log(item.name + " was clicked")
+        // console.log(item.name + " was clicked")
 
         switch (item.id ) {
             case Menu.LOGOUT: {
@@ -41,7 +41,7 @@ export class DashboardComponent implements SideNavHandler, ToolbarHandler {
     }
 
     onMenuClick(): any {
-        console.log("onMenuClick");
+        // console.log("onMenuClick");
         this.drawerOpen = !this.drawerOpen;
     }
 }
