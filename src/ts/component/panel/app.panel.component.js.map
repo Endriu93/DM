@@ -1,1 +1,0 @@
-{"version":3,"file":"app.panel.component.js","sourceRoot":"","sources":["app.panel.component.ts"],"names":[],"mappings":";;;;;;;;;IAOA;QALA;YAK+B,SAAI,GAAG,SAAS,CAAC;QAAC,CAAC;QAArC,cAAc;YAL1B,gBAAS,CAAC;gBACT,QAAQ,EAAE,OAAO;gBACjB,WAAW,EAAE,cAAc;gBAC3B,SAAS,EAAE,CAAC,aAAa,CAAC;aAC3B,CAAC;WACW,cAAc,CAAuB;QAAD,qBAAC;KAAA,AAAlD,IAAkD;IAArC,wCAAc"}
