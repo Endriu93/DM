@@ -10,8 +10,6 @@ import {DashboardComponent} from "../component/dashboard/DashboardComponent";
 import {DocumentsComponent} from "../component/documents/DocumentsComponent"
 import {MatButtonModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-// import {BrowserAnimationsModule} from '@angular/platform-browser';
-// import {MaterialModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
 import {MatCardModule} from '@angular/material';
 import {MatGridListModule} from '@angular/material';
@@ -30,11 +28,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
     imports: [BrowserModule, MatButtonModule, BrowserAnimationsModule, MatInputModule, MatCardModule, MatGridListModule,
         MatDialogModule, MatCheckboxModule, MatSelectModule, FormsModule, MatIconModule, MatListModule, MatToolbarModule,
-    MatSidenavModule],
+    MatSidenavModule,HttpClientModule],
     // here we place all used components in appliation
     declarations: [MainComponent, TopHostDirective, LoginComponent, DashboardComponent,
         SideNavComponent, DocumentsComponent, ToolbarComponent, DocumentsSearchComponent, ActivitiesComponent
