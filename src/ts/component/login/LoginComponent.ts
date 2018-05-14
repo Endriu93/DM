@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Output} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {Component, EventEmitter} from "@angular/core";
+import {HttpErrorResponse} from "@angular/common/http";
+import {RestService} from "../../rest/RestService";
 
 @Component({
     templateUrl: 'ts/component/login/loginComponent.html',
@@ -10,9 +11,7 @@ export class LoginComponent {
     username: string;
     password: string;
 
-    constructor(private http: HttpClient){
-
-    }
+    constructor(private rest: RestService){}
 
     public onUserLogged(): void {
         // alert("user Logged!");
@@ -28,8 +27,7 @@ export class LoginComponent {
     }
 
     onSubmit() {
-        // TODO - ta metoda nie powina iść przez interceptor
-        this.http.get<AuthToken>(`http://localhost:8080/rest/auth?login=${this.username}&password=${this.password}`)
+        this.rest.authenticate(this.username,this.password)
             .subscribe(
                 data => {
                     console.log(data);
@@ -46,6 +44,3 @@ export class LoginComponent {
     }
 }
 
-interface AuthToken {
-    token: string
-}

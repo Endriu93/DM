@@ -29,6 +29,9 @@ import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {HttpClientModule} from "@angular/common/http";
+import {RestConfig} from "../serviceAbstract/RestConfig";
+import {RestConfigImpl} from "../service/RestConfigImpl";
+import {RestService} from "../rest/RestService";
 
 @NgModule({
     imports: [BrowserModule, MatButtonModule, BrowserAnimationsModule, MatInputModule, MatCardModule, MatGridListModule,
@@ -40,7 +43,8 @@ import {HttpClientModule} from "@angular/common/http";
         , DocumentAddButton, DocumentAddDialog, SelectCategoryComponent, PanelComponent],
     // component, which will bootstrap index.html
     bootstrap: [MainComponent],
-    providers: [{provide: MainService, useClass: MainServiceImpl}],
+    providers: [{provide: MainService, useClass: MainServiceImpl},
+        {provide: RestConfig, useClass: RestConfigImpl},{provide: RestService, useClass: RestService}],
     entryComponents: [LoginComponent, DashboardComponent]
 })
 export class AppModule {
