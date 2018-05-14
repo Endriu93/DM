@@ -1,5 +1,5 @@
-import {AfterViewInit, Component, ComponentFactoryResolver, OnDestroy, ViewChild} from '@angular/core';
-import {MainService} from "../service/AuthService";
+import {AfterViewInit, Component, ComponentFactoryResolver, OnDestroy, ViewChild} from "@angular/core";
+import {AuthService} from "../service/AuthService";
 import {TopHostDirective} from "../directive/TopHostDirective";
 import {LoginComponent} from "./login/LoginComponent";
 import {DashboardComponent} from "./dashboard/DashboardComponent";
@@ -13,7 +13,7 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
     @ViewChild(TopHostDirective) topHost: TopHostDirective;
 
-    constructor(private componentFactoryResolver: ComponentFactoryResolver, private service: MainService) {
+    constructor(private componentFactoryResolver: ComponentFactoryResolver, private service: AuthService) {
     }
 
     ngAfterViewInit() {

@@ -1,5 +1,5 @@
 import {RestConfig} from "./RestConfig";
-export class RestConfigImpl extends RestConfig {
+export class RestConfigLocal extends RestConfig {
 
     public getWebUrl(): string {
         return "http://localhost:8080/rest/auth";

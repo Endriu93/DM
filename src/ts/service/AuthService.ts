@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {AuthToken} from "../rest/auth/AuthToken";
 
 @Injectable()
-export class MainService{
+export class AuthService{
     isUserAuthenticated() : boolean {
         // TODO check jwt exp date
         return localStorage.getItem("token") != null
@@ -10,11 +10,12 @@ export class MainService{
 
     public saveToken(token: AuthToken)
     {
-        localStorage.setItem("token",token)
+        localStorage.setItem("token",token.token)
     }
 
     public deleteToken()
     {
-        localStorage.removeItem("token",null)
+        localStorage.removeItem("token")
     }
+
 }
