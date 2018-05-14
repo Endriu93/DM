@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 // don't know why, but is required
 import {BrowserModule} from '@angular/platform-browser';
 import {MainComponent} from '../component/MainComponent';
-import {MainService} from "../serviceAbstract/MainService";
+import {MainService} from "../service/MainService";
 import {MainServiceImpl} from "../service/MainServiceImpl";
 import {TopHostDirective} from "../directive/TopHostDirective";
 import {LoginComponent} from "../component/login/LoginComponent";
@@ -29,7 +29,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {HttpClientModule} from "@angular/common/http";
-import {RestConfig} from "../serviceAbstract/RestConfig";
+import {RestConfig} from "../service/RestConfig";
 import {RestConfigImpl} from "../service/RestConfigImpl";
 import {RestService} from "../rest/RestService";
 
@@ -43,7 +43,7 @@ import {RestService} from "../rest/RestService";
         , DocumentAddButton, DocumentAddDialog, SelectCategoryComponent, PanelComponent],
     // component, which will bootstrap index.html
     bootstrap: [MainComponent],
-    providers: [{provide: MainService, useClass: MainServiceImpl},
+    providers: [{provide: MainService, useClass: MainService},
         {provide: RestConfig, useClass: RestConfigImpl},{provide: RestService, useClass: RestService}],
     entryComponents: [LoginComponent, DashboardComponent]
 })

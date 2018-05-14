@@ -1,21 +1,21 @@
 import {Component, EventEmitter} from "@angular/core";
 import {HttpErrorResponse} from "@angular/common/http";
 import {RestService} from "../../rest/RestService";
+import {AuthToken} from "../../rest/auth/AuthToken";
 
 @Component({
     templateUrl: 'ts/component/login/loginComponent.html',
     styleUrls: ['./login.css']
 })
 export class LoginComponent {
-    onLogged: EventEmitter<boolean> = new EventEmitter<boolean>();
+    onLogged: EventEmitter<AuthToken> = new EventEmitter<AuthToken>();
     username: string;
     password: string;
 
     constructor(private rest: RestService){}
 
-    public onUserLogged(): void {
-        // alert("user Logged!");
-        this.onLogged.emit(true);
+    public onUserLogged(token: AuthToken): void {
+        this.onLogged.emit(token);
     }
 
     onUsername(event: any) {
@@ -29,16 +29,16 @@ export class LoginComponent {
     onSubmit() {
         this.rest.authenticate(this.username,this.password)
             .subscribe(
-                data => {
-                    console.log(data);
-                    this.onUserLogged();
+                (data: AuthToken) => {
+                    // console.log(data.token);
+                    this.onUserLogged(data);
                 },
                 (err: HttpErrorResponse) => {
-                    if(err.status == 401)
+                    if(err.status == 401) // UNAUTHORIZED
                         alert("login or password incorrect!");
                     else
                         alert("service is temporary unavailable!");
-                    console.log("error occured");
+                    // console.log("error occured");
                 }
             )
     }

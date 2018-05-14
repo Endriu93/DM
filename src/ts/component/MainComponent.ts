@@ -1,8 +1,9 @@
 import {AfterViewInit, Component, ComponentFactoryResolver, OnDestroy, ViewChild} from '@angular/core';
-import {MainService} from "../serviceAbstract/MainService";
+import {MainService} from "../service/MainService";
 import {TopHostDirective} from "../directive/TopHostDirective";
 import {LoginComponent} from "./login/LoginComponent";
 import {DashboardComponent} from "./dashboard/DashboardComponent";
+import {AuthToken} from "../rest/auth/AuthToken";
 
 @Component({
     selector: 'main-component',
@@ -10,15 +11,15 @@ import {DashboardComponent} from "./dashboard/DashboardComponent";
 })
 export class MainComponent implements AfterViewInit, OnDestroy {
 
-    mainService: MainService;
+    // mainService: MainService;
     @ViewChild(TopHostDirective) topHost: TopHostDirective;
 
-    constructor(private componentFactoryResolver: ComponentFactoryResolver, service: MainService) {
-        this.mainService = service;
+    constructor(private componentFactoryResolver: ComponentFactoryResolver, private service: MainService) {
+        // this.mainService = service;
     }
 
     ngAfterViewInit() {
-        if (this.mainService.isUserAuthenticated() == true)
+        if (this.service.isUserAuthenticated() == true)
             this.loadDashboardComponent();
         else
             this.loadLoginComponent();
@@ -31,16 +32,18 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
     loadLoginComponent() {
         var componentInstance: LoginComponent = this.loadComponent(LoginComponent).instance;
-        componentInstance.onLogged.subscribe((evt: any) => this.onUserLogged())
+        componentInstance.onLogged.subscribe((evt: AuthToken) => this.onUserLogged(evt))
     }
 
-    onUserLogged() {
+    onUserLogged(token: AuthToken) {
         // alert("MainComponent.onUserLogged()");
+        this.service.saveToken(token);
         this.loadDashboardComponent();
     }
 
     onUserLoggedOut() {
         // alert("MainComponent.onUserLoggedOut()");
+        this.service.deleteToken();
         this.loadLoginComponent();
     }
 
