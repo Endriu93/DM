@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, ComponentFactoryResolver, OnDestroy, ViewChild} from '@angular/core';
-import {MainService} from "../service/MainService";
+import {MainService} from "../service/AuthService";
 import {TopHostDirective} from "../directive/TopHostDirective";
 import {LoginComponent} from "./login/LoginComponent";
 import {DashboardComponent} from "./dashboard/DashboardComponent";
@@ -11,11 +11,9 @@ import {AuthToken} from "../rest/auth/AuthToken";
 })
 export class MainComponent implements AfterViewInit, OnDestroy {
 
-    // mainService: MainService;
     @ViewChild(TopHostDirective) topHost: TopHostDirective;
 
     constructor(private componentFactoryResolver: ComponentFactoryResolver, private service: MainService) {
-        // this.mainService = service;
     }
 
     ngAfterViewInit() {
@@ -36,13 +34,11 @@ export class MainComponent implements AfterViewInit, OnDestroy {
     }
 
     onUserLogged(token: AuthToken) {
-        // alert("MainComponent.onUserLogged()");
         this.service.saveToken(token);
         this.loadDashboardComponent();
     }
 
     onUserLoggedOut() {
-        // alert("MainComponent.onUserLoggedOut()");
         this.service.deleteToken();
         this.loadLoginComponent();
     }

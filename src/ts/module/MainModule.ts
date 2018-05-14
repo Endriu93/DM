@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 // don't know why, but is required
 import {BrowserModule} from '@angular/platform-browser';
 import {MainComponent} from '../component/MainComponent';
-import {MainService} from "../service/MainService";
+import {MainService} from "../service/AuthService";
 import {MainServiceImpl} from "../service/MainServiceImpl";
 import {TopHostDirective} from "../directive/TopHostDirective";
 import {LoginComponent} from "../component/login/LoginComponent";
@@ -30,8 +30,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {HttpClientModule} from "@angular/common/http";
 import {RestConfig} from "../service/RestConfig";
-import {RestConfigImpl} from "../service/RestConfigImpl";
-import {RestService} from "../rest/RestService";
+import {RestConfigImpl} from "../service/RestConfigLocal";
+import {RestService} from "../service/RestService";
 
 @NgModule({
     imports: [BrowserModule, MatButtonModule, BrowserAnimationsModule, MatInputModule, MatCardModule, MatGridListModule,
