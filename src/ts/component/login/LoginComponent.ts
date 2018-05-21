@@ -1,7 +1,7 @@
 import {Component, EventEmitter} from "@angular/core";
 import {HttpErrorResponse} from "@angular/common/http";
 import {RestService} from "../../service/rest/RestService";
-import {AuthToken} from "../../rest/auth/AuthToken";
+import {AuthToken} from "../../model/auth/AuthToken";
 
 @Component({
     templateUrl: 'ts/component/login/loginComponent.html',

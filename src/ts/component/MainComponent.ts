@@ -3,7 +3,7 @@ import {AuthService} from "../service/view/AuthService";
 import {TopHostDirective} from "../directive/TopHostDirective";
 import {LoginComponent} from "./login/LoginComponent";
 import {DashboardComponent} from "./dashboard/DashboardComponent";
-import {AuthToken} from "../rest/auth/AuthToken";
+import {AuthToken} from "../model/auth/AuthToken";
 import {DynamicComponentService} from "../service/view/DynamicComponentService";
 
 @Component({
