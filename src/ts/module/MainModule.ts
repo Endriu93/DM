@@ -29,25 +29,63 @@ import {MatListModule} from "@angular/material/list";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {HttpClientModule} from "@angular/common/http";
-import {RestConfig} from "../service/RestConfig";
-import {RestService} from "../service/RestService";
-import {AuthService} from "../service/AuthService";
-import {RestConfigLocal} from "../service/RestConfigLocal";
+import {RestConfig} from "../service/rest/RestConfig";
+import {RestService} from "../service/rest/RestService";
+import {AuthService} from "../service/view/AuthService";
+import {RestConfigLocal} from "../service/rest/RestConfigLocal";
+import {DashHostDirective} from "../directive/DashHostDirective";
+import {DynamicComponentService} from "../service/view/DynamicComponentService";
 
 
 @NgModule({
-    imports: [BrowserModule, MatButtonModule, BrowserAnimationsModule, MatInputModule, MatCardModule, MatGridListModule,
-        MatDialogModule, MatCheckboxModule, MatSelectModule, FormsModule, MatIconModule, MatListModule, MatToolbarModule,
-    MatSidenavModule,HttpClientModule],
+    imports: [
+        BrowserModule,
+        MatButtonModule,
+        BrowserAnimationsModule,
+        MatInputModule,
+        MatCardModule,
+        MatGridListModule,
+        MatDialogModule,
+        MatCheckboxModule,
+        MatSelectModule,
+        FormsModule,
+        MatIconModule,
+        MatListModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        HttpClientModule
+    ],
     // here we place all used components in appliation
-    declarations: [MainComponent, TopHostDirective, LoginComponent, DashboardComponent,
-        SideNavComponent, DocumentsComponent, ToolbarComponent, DocumentsSearchComponent, ActivitiesComponent
-        , DocumentAddButton, DocumentAddDialog, SelectCategoryComponent, PanelComponent],
+    declarations: [
+        MainComponent,
+        TopHostDirective,
+        LoginComponent,
+        DashboardComponent,
+        SideNavComponent,
+        DocumentsComponent,
+        ToolbarComponent,
+        DocumentsSearchComponent,
+        ActivitiesComponent,
+        DocumentAddButton,
+        DocumentAddDialog,
+        SelectCategoryComponent,
+        PanelComponent,
+        DashHostDirective
+    ],
     // component, which will bootstrap index.html
     bootstrap: [MainComponent],
-    providers: [{provide: AuthService, useClass: AuthService},
-        {provide: RestConfig, useClass: RestConfigLocal},{provide: RestService, useClass: RestService}],
-    entryComponents: [LoginComponent, DashboardComponent]
+    providers: [
+        {provide: AuthService, useClass: AuthService},
+        {provide: RestConfig, useClass: RestConfigLocal},
+        {provide: RestService, useClass: RestService},
+        {provide: DynamicComponentService, useClass: DynamicComponentService},
+    ],
+    entryComponents: [
+        LoginComponent,
+        DashboardComponent,
+        DocumentsComponent,
+        ActivitiesComponent
+    ]
 })
 export class AppModule {
 

@@ -1,9 +1,10 @@
-import {AfterViewInit, Component, ComponentFactoryResolver, OnDestroy, ViewChild} from "@angular/core";
-import {AuthService} from "../service/AuthService";
+import {AfterViewInit, Component, OnDestroy, ViewChild} from "@angular/core";
+import {AuthService} from "../service/view/AuthService";
 import {TopHostDirective} from "../directive/TopHostDirective";
 import {LoginComponent} from "./login/LoginComponent";
 import {DashboardComponent} from "./dashboard/DashboardComponent";
 import {AuthToken} from "../rest/auth/AuthToken";
+import {DynamicComponentService} from "../service/view/DynamicComponentService";
 
 @Component({
     selector: 'main-component',
@@ -13,7 +14,7 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
     @ViewChild(TopHostDirective) topHost: TopHostDirective;
 
-    constructor(private componentFactoryResolver: ComponentFactoryResolver, private service: AuthService) {
+    constructor(private dynamicComponentService: DynamicComponentService, private service: AuthService) {
     }
 
     ngAfterViewInit() {
@@ -24,12 +25,12 @@ export class MainComponent implements AfterViewInit, OnDestroy {
     }
 
     loadDashboardComponent() {
-        var componentInstance: DashboardComponent = this.loadComponent(DashboardComponent).instance;
+        var componentInstance: DashboardComponent = this.dynamicComponentService.loadComponent(DashboardComponent,this.topHost).instance;
         componentInstance.onLoggedOut.subscribe((evt: any) => this.onUserLoggedOut())
     }
 
     loadLoginComponent() {
-        var componentInstance: LoginComponent = this.loadComponent(LoginComponent).instance;
+        var componentInstance: LoginComponent = this.dynamicComponentService.loadComponent(LoginComponent, this.topHost).instance;
         componentInstance.onLogged.subscribe((evt: AuthToken) => this.onUserLogged(evt))
     }
 
@@ -46,12 +47,4 @@ export class MainComponent implements AfterViewInit, OnDestroy {
     ngOnDestroy(): void {
     }
 
-    loadComponent(component: any): any {
-        let componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
-
-        let viewContainerRef = this.topHost.viewContainerRef;
-        viewContainerRef.clear();
-
-        return viewContainerRef.createComponent(componentFactory);
-    }
 }

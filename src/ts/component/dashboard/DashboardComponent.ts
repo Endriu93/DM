@@ -1,7 +1,11 @@
-import {Component, EventEmitter} from "@angular/core";
+import {AfterViewInit, Component, EventEmitter, ViewChild} from "@angular/core";
 import {SideNavHandler} from "../side-nav/SideNavHandler";
 import {SideNavItem} from "../side-nav/SideNavItem";
 import {ToolbarHandler} from "../toolbar/ToolbarHandler";
+import {DashHostDirective} from "../../directive/DashHostDirective";
+import {DocumentsComponent} from "../documents/DocumentsComponent";
+import {DynamicComponentService} from "../../service/view/DynamicComponentService";
+import {ActivitiesComponent} from "../activities/activities.component";
 
 enum Menu {DOCS,ACTS,LOGOUT}
 
@@ -9,12 +13,16 @@ enum Menu {DOCS,ACTS,LOGOUT}
     templateUrl: 'ts/component/dashboard/dashboardComponent.html',
     styleUrls: ['./dashboard.css']
 })
-export class DashboardComponent implements SideNavHandler, ToolbarHandler {
+export class DashboardComponent implements SideNavHandler, ToolbarHandler, AfterViewInit {
     onLoggedOut: EventEmitter<boolean> = new EventEmitter<boolean>();
     drawerOpen: Boolean = false;
 
+    @ViewChild(DashHostDirective) dashHost: DashHostDirective;
+
+    constructor(private dynamicComponentService: DynamicComponentService ) {
+    }
+
     public onUserLoggedOut(): void {
-        // alert("user Logged out!");
         this.onLoggedOut.emit(true);
     }
 
@@ -26,22 +34,41 @@ export class DashboardComponent implements SideNavHandler, ToolbarHandler {
     }
 
     onCreateItems2(): SideNavItem[] {
-        return [{id: Menu.LOGOUT, name: 'Wyloguj sss', icon: 'power_settings_new'}];
+        return [{id: Menu.LOGOUT, name: 'Wyloguj', icon: 'power_settings_new'}];
     }
 
     onItemClick(item: SideNavItem): any {
-        // console.log(item.name + " was clicked")
-
         switch (item.id ) {
             case Menu.LOGOUT: {
                 this.onUserLoggedOut();
+                break;
+            }
+            case Menu.ACTS: {
+                this.loadActsComponent()
+                break;
+            }
+            case Menu.DOCS: {
+                this.loadDocsComponent()
                 break;
             }
         }
     }
 
     onMenuClick(): any {
-        // console.log("onMenuClick");
         this.drawerOpen = !this.drawerOpen;
     }
+
+
+    ngAfterViewInit(): void {
+        this.loadDocsComponent(); // TODO choose based on last saved state
+    }
+
+    loadActsComponent() {
+        this.dynamicComponentService.loadComponent(ActivitiesComponent,this.dashHost)
+    }
+
+    loadDocsComponent() {
+        this.dynamicComponentService.loadComponent(DocumentsComponent,this.dashHost)
+    }
+
 }

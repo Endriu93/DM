@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AuthToken} from "../rest/auth/AuthToken";
+import {AuthToken} from "../../rest/auth/AuthToken";
 
 @Injectable()
 export class AuthService{

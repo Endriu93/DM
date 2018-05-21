@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
-import {AuthToken} from "../rest/auth/AuthToken";
+import {AuthToken} from "../../rest/auth/AuthToken";
 import {RestConfig} from "./RestConfig";
 import {Observable} from "rxjs/Observable";
 
