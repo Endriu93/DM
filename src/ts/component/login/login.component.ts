@@ -4,7 +4,7 @@ import {RestService} from "../../service/rest/RestService";
 import {TokenModel} from "../../model/auth/TokenModel";
 
 @Component({
-    templateUrl: 'ts/component/login/loginComponent.html',
+    templateUrl: 'ts/component/login/login.html',
     styleUrls: ['./login.css']
 })
 export class LoginComponent {

@@ -3,9 +3,9 @@ import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {MainComponent} from "../component/MainComponent";
 import {TopHostDirective} from "../directive/TopHostDirective";
-import {LoginComponent} from "../component/login/LoginComponent";
-import {DashboardComponent} from "../component/dashboard/DashboardComponent";
-import {DocumentsComponent} from "../component/documents/DocumentsComponent";
+import {LoginComponent} from "../component/login/login.component";
+import {DashboardComponent} from "../component/dashboard/dashboard.component";
+import {DocumentsComponent} from "../component/documents/documents.component";
 import {
     MatButtonModule,
     MatCardModule,
@@ -17,7 +17,7 @@ import {
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
-import {SideNavComponent} from "../component/side-nav/SideNavComponent";
+import {SideNavComponent} from "../component/side-nav/side-nav.component";
 import {ToolbarComponent} from "../component/toolbar/toolbar.component";
 import {DocumentsSearchComponent} from "../component/documents-search/documents-search.component";
 import {ActivitiesComponent} from "../component/activities/activities.component";

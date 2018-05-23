@@ -6,8 +6,8 @@ import {SideNavHandler} from "./SideNavHandler";
 
 @Component({
   selector: 'side-nav',
-  templateUrl: './sideNav.html',
-  styleUrls: ['./sideNav.css']
+  templateUrl: './side-nav.html',
+  styleUrls: ['./side-nav.css']
 })
 export class SideNavComponent {
 

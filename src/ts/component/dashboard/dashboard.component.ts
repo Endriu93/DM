@@ -3,14 +3,14 @@ import {SideNavHandler} from "../side-nav/SideNavHandler";
 import {SideNavItem} from "../side-nav/SideNavItem";
 import {ToolbarHandler} from "../toolbar/ToolbarHandler";
 import {DashHostDirective} from "../../directive/DashHostDirective";
-import {DocumentsComponent} from "../documents/DocumentsComponent";
+import {DocumentsComponent} from "../documents/documents.component";
 import {DynamicComponentService} from "../../service/view/DynamicComponentService";
 import {ActivitiesComponent} from "../activities/activities.component";
 
 enum Menu {DOCS,ACTS,LOGOUT}
 
 @Component({
-    templateUrl: 'ts/component/dashboard/dashboardComponent.html',
+    templateUrl: 'ts/component/dashboard/dashboard.html',
     styleUrls: ['./dashboard.css']
 })
 export class DashboardComponent implements SideNavHandler, ToolbarHandler, AfterViewInit {
