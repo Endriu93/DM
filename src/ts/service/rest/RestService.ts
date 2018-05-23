@@ -4,6 +4,7 @@ import {TokenModel} from "../../model/auth/TokenModel";
 import {RestConfig} from "./RestConfig";
 import {Observable} from "rxjs/Observable";
 import {DocumentModel} from "../../model/documents/DocumentModel";
+import {ActivityModel} from "../../model/activities/ActivityModel";
 
 @Injectable()
 export class RestService {
@@ -19,5 +20,9 @@ export class RestService {
 
     getDocuments(): Observable<DocumentModel[]> {
         return this.http.get<DocumentModel[]>(this.config.getWebUrl() + "docs");
+    }
+
+    getActivities(): Observable<ActivityModel[]> {
+        return this.http.get<ActivityModel[]>(this.config.getWebUrl() + "acts");
     }
 }

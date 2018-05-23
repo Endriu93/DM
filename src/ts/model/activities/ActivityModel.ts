@@ -1,7 +1,7 @@
 /**
  * Created by Andrzej on 06.05.2017.
  */
-export class ActivityItem {
+export class ActivityModel {
   name: string;
   icon: string;
   user: string;
