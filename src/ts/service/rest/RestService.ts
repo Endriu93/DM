@@ -10,19 +10,23 @@ import {ActivityModel} from "../../model/activities/ActivityModel";
 export class RestService {
     constructor(private http: HttpClient, private config: RestConfig) {}
 
+    private url(end:string): string{
+        return this.config.getWebUrl() + end;
+    }
+
     authenticate(login: string, password: string): Observable<TokenModel> {
         const params = new HttpParams()
             .set('login', login)
             .set('password', password);
 
-        return this.http.get<TokenModel>(this.config.getWebUrl() + "auth",{params});
+        return this.http.get<TokenModel>(this.url("auth"),{params});
     }
 
     getDocuments(): Observable<DocumentModel[]> {
-        return this.http.get<DocumentModel[]>(this.config.getWebUrl() + "docs");
+        return this.http.get<DocumentModel[]>(this.url("docs"));
     }
 
     getActivities(): Observable<ActivityModel[]> {
-        return this.http.get<ActivityModel[]>(this.config.getWebUrl() + "acts");
+        return this.http.get<ActivityModel[]>(this.url("acts"));
     }
 }
