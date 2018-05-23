@@ -3,7 +3,7 @@ import {AuthService} from "../service/view/AuthService";
 import {TopHostDirective} from "../directive/TopHostDirective";
 import {LoginComponent} from "./login/LoginComponent";
 import {DashboardComponent} from "./dashboard/DashboardComponent";
-import {AuthToken} from "../model/auth/AuthToken";
+import {TokenModel} from "../model/auth/TokenModel";
 import {DynamicComponentService} from "../service/view/DynamicComponentService";
 
 @Component({
@@ -31,10 +31,10 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
     loadLoginComponent() {
         var componentInstance: LoginComponent = this.dynamicComponentService.loadComponent(LoginComponent, this.topHost).instance;
-        componentInstance.onLogged.subscribe((evt: AuthToken) => this.onUserLogged(evt))
+        componentInstance.onLogged.subscribe((evt: TokenModel) => this.onUserLogged(evt))
     }
 
-    onUserLogged(token: AuthToken) {
+    onUserLogged(token: TokenModel) {
         this.service.saveToken(token);
         this.loadDashboardComponent();
     }

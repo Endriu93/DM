@@ -1,20 +1,20 @@
 import {Component, EventEmitter} from "@angular/core";
 import {HttpErrorResponse} from "@angular/common/http";
 import {RestService} from "../../service/rest/RestService";
-import {AuthToken} from "../../model/auth/AuthToken";
+import {TokenModel} from "../../model/auth/TokenModel";
 
 @Component({
     templateUrl: 'ts/component/login/loginComponent.html',
     styleUrls: ['./login.css']
 })
 export class LoginComponent {
-    onLogged: EventEmitter<AuthToken> = new EventEmitter<AuthToken>();
+    onLogged: EventEmitter<TokenModel> = new EventEmitter<TokenModel>();
     username: string;
     password: string;
 
     constructor(private rest: RestService){}
 
-    public onUserLogged(token: AuthToken): void {
+    public onUserLogged(token: TokenModel): void {
         this.onLogged.emit(token);
     }
 
@@ -29,7 +29,7 @@ export class LoginComponent {
     onSubmit() {
         this.rest.authenticate(this.username,this.password)
             .subscribe(
-                (data: AuthToken) => {
+                (data: TokenModel) => {
                     // console.log(data.token);
                     this.onUserLogged(data);
                 },

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AuthToken} from "../../model/auth/AuthToken";
+import {TokenModel} from "../../model/auth/TokenModel";
 
 @Injectable()
 export class AuthService{
@@ -8,7 +8,7 @@ export class AuthService{
         return localStorage.getItem("token") != null
     }
 
-    public saveToken(token: AuthToken)
+    public saveToken(token: TokenModel)
     {
         localStorage.setItem("token",token.token)
     }
