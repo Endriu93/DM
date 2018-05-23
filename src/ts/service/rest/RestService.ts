@@ -3,6 +3,7 @@ import {HttpClient, HttpParams} from "@angular/common/http";
 import {AuthToken} from "../../model/auth/AuthToken";
 import {RestConfig} from "./RestConfig";
 import {Observable} from "rxjs/Observable";
+import {DocumentModel} from "../../model/documents/DocumentModel";
 
 @Injectable()
 export class RestService {
@@ -13,6 +14,10 @@ export class RestService {
             .set('login', login)
             .set('password', password);
 
-        return this.http.get<AuthToken>(this.config.getWebUrl(),{params});
+        return this.http.get<AuthToken>(this.config.getWebUrl() + "auth",{params});
+    }
+
+    getDocuments(): Observable<DocumentModel[]> {
+        return this.http.get<DocumentModel[]>(this.config.getWebUrl() + "docs");
     }
 }
