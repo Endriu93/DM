@@ -52,12 +52,16 @@ export class DashboardComponent implements SideNavHandler, ToolbarHandler, After
                 break;
             }
         }
+        this.toggleDrawer()
     }
 
     onMenuClick(): any {
-        this.drawerOpen = !this.drawerOpen;
+        this.toggleDrawer();
     }
 
+    private toggleDrawer(){
+        this.drawerOpen = !this.drawerOpen;
+    }
 
     ngAfterViewInit(): void {
         this.loadDocsComponent(); // TODO choose based on last saved state
