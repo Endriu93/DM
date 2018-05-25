@@ -2,7 +2,6 @@
  * Created by Andrzej on 06.05.2017.
  */
 import {AfterViewInit, Component} from "@angular/core";
-import {DocumentItem} from "./documentItem";
 import {RestService} from "../../service/rest/RestService";
 import {DocumentModel} from "../../model/documents/DocumentModel";
 
@@ -16,7 +15,7 @@ export class DocumentsComponent implements AfterViewInit {
      {name: 'Dokument1' , icon: 'folder', category: 'kategoria 1', addedBy: 'User 11'},
      {name: 'Dokument2' , icon: 'folder', category: 'kategoria 2', addedBy: 'User 11'}
      ];*/
-    documents: DocumentItem[] = [];
+    documents: DocumentModel[] = [];
 
     constructor(private rest: RestService) {
     }
