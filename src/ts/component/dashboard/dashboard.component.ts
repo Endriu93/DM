@@ -14,7 +14,7 @@ enum Menu {DOCS,ACTS,LOGOUT}
     styleUrls: ['./dashboard.css']
 })
 export class DashboardComponent implements SideNavHandler, ToolbarHandler, AfterViewInit {
-    onLoggedOut: EventEmitter<boolean> = new EventEmitter<boolean>();
+    onLoggedOut: EventEmitter<boolean> = new EventEmitter<boolean>(false);
     drawerOpen: Boolean = false;
 
     @ViewChild(DashHostDirective) dashHost: DashHostDirective;
@@ -59,8 +59,16 @@ export class DashboardComponent implements SideNavHandler, ToolbarHandler, After
         this.toggleDrawer();
     }
 
+    onUploadClick(): any {
+        this.toggleDrawer();
+    }
+
     private toggleDrawer(){
         this.drawerOpen = !this.drawerOpen;
+    }
+
+    private showUploadWindow(){
+
     }
 
     ngAfterViewInit(): void {

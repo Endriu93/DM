@@ -5,4 +5,5 @@
 export interface ToolbarHandler
 {
     onMenuClick(): any;
+    onUploadClick(): any;
 }
