@@ -35,6 +35,7 @@ import {AuthService} from "../service/view/AuthService";
 import {RestConfigLocal} from "../service/rest/RestConfigLocal";
 import {DashHostDirective} from "../directive/DashHostDirective";
 import {DynamicComponentService} from "../service/view/DynamicComponentService";
+import {UsersComponent} from "../component/users/users.component";
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import {DynamicComponentService} from "../service/view/DynamicComponentService";
         DocumentAddDialog,
         SelectCategoryComponent,
         PanelComponent,
-        DashHostDirective
+        DashHostDirective,
+        UsersComponent
     ],
     // component, which will bootstrap index.html
     bootstrap: [MainComponent],
@@ -84,7 +86,8 @@ import {DynamicComponentService} from "../service/view/DynamicComponentService";
         LoginComponent,
         DashboardComponent,
         DocumentsComponent,
-        ActivitiesComponent
+        ActivitiesComponent,
+        UsersComponent
     ]
 })
 export class AppModule {

@@ -5,12 +5,14 @@ import {RestConfig} from "./RestConfig";
 import {Observable} from "rxjs/Observable";
 import {DocumentModel} from "../../model/documents/DocumentModel";
 import {ActivityModel} from "../../model/activities/ActivityModel";
+import {UserModel} from "../../model/user/UserModel";
 
 @Injectable()
 export class RestService {
-    constructor(private http: HttpClient, private config: RestConfig) {}
+    constructor(private http: HttpClient, private config: RestConfig) {
+    }
 
-    private url(end:string): string{
+    private url(end: string): string {
         return this.config.getWebUrl() + end;
     }
 
@@ -19,7 +21,7 @@ export class RestService {
             .set('login', login)
             .set('password', password);
 
-        return this.http.get<TokenModel>(this.url("auth"),{params});
+        return this.http.get<TokenModel>(this.url("auth"), {params});
     }
 
     getDocuments(): Observable<DocumentModel[]> {
@@ -28,5 +30,13 @@ export class RestService {
 
     getActivities(): Observable<ActivityModel[]> {
         return this.http.get<ActivityModel[]>(this.url("acts"));
+    }
+
+    getLoggedUser(): Observable<UserModel> {
+        return this.http.get<UserModel>(this.url("users/logged"));
+    }
+
+    getUsers(): Observable<UserModel[]> {
+        return this.http.get<UserModel[]>(this.url("users"));
     }
 }

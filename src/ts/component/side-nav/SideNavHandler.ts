@@ -4,8 +4,8 @@ import {SideNavItem} from "./SideNavItem";
  */
 
 export interface SideNavHandler{
-    onCreateItems1(): SideNavItem[];
-    onCreateItems2(): SideNavItem[];
-
-    onItemClick(item:SideNavItem): any;
+    loadActsComponent(): void
+    loadDocsComponent(): void
+    loadUsersComponent(): void
+    logout(): void
 }

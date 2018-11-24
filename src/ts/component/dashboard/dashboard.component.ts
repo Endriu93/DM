@@ -6,8 +6,7 @@ import {DashHostDirective} from "../../directive/DashHostDirective";
 import {DocumentsComponent} from "../documents/documents.component";
 import {DynamicComponentService} from "../../service/view/DynamicComponentService";
 import {ActivitiesComponent} from "../activities/activities.component";
-
-enum Menu {DOCS,ACTS,LOGOUT}
+import {UsersComponent} from "../users/users.component";
 
 @Component({
     templateUrl: 'ts/component/dashboard/dashboard.html',
@@ -19,40 +18,11 @@ export class DashboardComponent implements SideNavHandler, ToolbarHandler, After
 
     @ViewChild(DashHostDirective) dashHost: DashHostDirective;
 
-    constructor(private dynamicComponentService: DynamicComponentService ) {
+    constructor(private dynamicComponentService: DynamicComponentService) {
     }
 
     public onUserLoggedOut(): void {
         this.onLoggedOut.emit(true);
-    }
-
-    onCreateItems1(): SideNavItem[] {
-        return [
-            {id: Menu.DOCS, name: 'Lista Dokumentów', icon: 'folder_open'},
-            {id: Menu.ACTS, name: 'Lista Aktywności', icon: 'event'}
-            ];
-    }
-
-    onCreateItems2(): SideNavItem[] {
-        return [{id: Menu.LOGOUT, name: 'Wyloguj', icon: 'power_settings_new'}];
-    }
-
-    onItemClick(item: SideNavItem): any {
-        switch (item.id ) {
-            case Menu.LOGOUT: {
-                this.onUserLoggedOut();
-                break;
-            }
-            case Menu.ACTS: {
-                this.loadActsComponent()
-                break;
-            }
-            case Menu.DOCS: {
-                this.loadDocsComponent()
-                break;
-            }
-        }
-        this.toggleDrawer()
     }
 
     onMenuClick(): any {
@@ -63,11 +33,11 @@ export class DashboardComponent implements SideNavHandler, ToolbarHandler, After
         this.toggleDrawer();
     }
 
-    private toggleDrawer(){
+    private toggleDrawer() {
         this.drawerOpen = !this.drawerOpen;
     }
 
-    private showUploadWindow(){
+    private showUploadWindow() {
 
     }
 
@@ -76,11 +46,21 @@ export class DashboardComponent implements SideNavHandler, ToolbarHandler, After
     }
 
     loadActsComponent() {
-        this.dynamicComponentService.loadComponent(ActivitiesComponent,this.dashHost)
+        this.dynamicComponentService.loadComponent(ActivitiesComponent, this.dashHost)
+        this.toggleDrawer()
     }
 
     loadDocsComponent() {
-        this.dynamicComponentService.loadComponent(DocumentsComponent,this.dashHost)
+        this.dynamicComponentService.loadComponent(DocumentsComponent, this.dashHost)
+        this.toggleDrawer()
     }
 
+    loadUsersComponent() {
+        this.dynamicComponentService.loadComponent(UsersComponent, this.dashHost)
+        this.toggleDrawer()
+    }
+
+    logout() {
+        this.onLoggedOut.emit(true);
+    }
 }

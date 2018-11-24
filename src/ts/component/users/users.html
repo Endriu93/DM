@@ -1,0 +1,32 @@
+<h3>Lista użytkowników</h3>
+<mat-divider></mat-divider>
+<!--<documents-search></documents-search>-->
+<!--<mat-divider></mat-divider>-->
+
+<mat-list>
+  <mat-list-item class="list_item">
+    <div class="flex-container">
+      <div mat-line class="document_name">nazwa użytkownika</div>
+      <!--<div mat-line class="document_category">kategoria</div>-->
+      <!--<div mat-line class="document_added_by">dodany przez</div>-->
+    </div>
+  </mat-list-item>
+  <mat-list-item *ngFor="let item of users" class="list_item" >
+    <mat-icon mat-list-icon>account_circle</mat-icon>
+    <div class="flex-container">
+      <div mat-line class="user_name">{{item.login}}</div>
+      <!--<div mat-line class="document_category">{{item.category}}</div>-->
+      <!--<div mat-line class="document_added_by">{{item.addedBy}}</div>-->
+    </div>
+  </mat-list-item>
+</mat-list>
+
+<!--<md-grid-list cols="4">
+  <md-grid-tile
+    *ngFor="let item of documents"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+    [style.background]="tile.color">
+    {{tile.text}}
+  </md-grid-tile>
+</md-grid-list>-->
