@@ -17,6 +17,21 @@ h3 {
   width: 100%;
 }
 
+.header-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.header-item {
+}
+
 .list_item {
   height: 48px;
 }
