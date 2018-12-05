@@ -20,16 +20,22 @@ export class AuthService{
         else return {token: ""};
     }
 
-    public fireTokenExpired() {
+    public fireUnauthorized() {
         this.authEvent.emit(false);
+        this.deleteToken();
     }
 
-    public saveToken(token: TokenModel)
+    public fireAuthorized(token: TokenModel) {
+        this.authEvent.emit(true);
+        this.saveToken(token);
+    }
+
+    private saveToken(token: TokenModel)
     {
         localStorage.setItem(AuthService.TOKEN,token.token)
     }
 
-    public deleteToken()
+    private deleteToken()
     {
         localStorage.removeItem(AuthService.TOKEN)
     }

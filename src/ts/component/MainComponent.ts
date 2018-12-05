@@ -31,22 +31,10 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
     loadDashboardComponent() {
         var componentInstance: DashboardComponent = this.dynamicComponentService.loadComponent(DashboardComponent,this.topHost).instance;
-        componentInstance.onLoggedOut.subscribe((evt: any) => this.onUserLoggedOut())
     }
 
     loadLoginComponent() {
         var componentInstance: LoginComponent = this.dynamicComponentService.loadComponent(LoginComponent, this.topHost).instance;
-        componentInstance.onLogged.subscribe((evt: TokenModel) => this.onUserLogged(evt))
-    }
-
-    onUserLogged(token: TokenModel) {
-        this.service.saveToken(token);
-        this.loadDashboardComponent();
-    }
-
-    onUserLoggedOut() {
-        this.service.deleteToken();
-        this.loadLoginComponent();
     }
 
     ngOnDestroy(): void {

@@ -1,28 +1,23 @@
 import {AfterViewInit, Component, EventEmitter, ViewChild} from "@angular/core";
 import {SideNavHandler} from "../side-nav/SideNavHandler";
-import {SideNavItem} from "../side-nav/SideNavItem";
 import {ToolbarHandler} from "../toolbar/ToolbarHandler";
 import {DashHostDirective} from "../../directive/DashHostDirective";
 import {DocumentsComponent} from "../documents/documents.component";
 import {DynamicComponentService} from "../../service/impl/DynamicComponentService";
 import {ActivitiesComponent} from "../activities/activities.component";
 import {UsersComponent} from "../users/users.component";
+import {AuthService} from "../../service/impl/AuthService";
 
 @Component({
     templateUrl: 'ts/component/dashboard/dashboard.html',
     styleUrls: ['./dashboard.css']
 })
 export class DashboardComponent implements SideNavHandler, ToolbarHandler, AfterViewInit {
-    onLoggedOut: EventEmitter<boolean> = new EventEmitter<boolean>(false);
     drawerOpen: Boolean = false;
 
     @ViewChild(DashHostDirective) dashHost: DashHostDirective;
 
-    constructor(private dynamicComponentService: DynamicComponentService) {
-    }
-
-    public onUserLoggedOut(): void {
-        this.onLoggedOut.emit(true);
+    constructor(private dynamicComponentService: DynamicComponentService, private auth: AuthService) {
     }
 
     onMenuClick(): any {
@@ -61,6 +56,6 @@ export class DashboardComponent implements SideNavHandler, ToolbarHandler, After
     }
 
     logout() {
-        this.onLoggedOut.emit(true);
+        this.auth.fireUnauthorized();
     }
 }
