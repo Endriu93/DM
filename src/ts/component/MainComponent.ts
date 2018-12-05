@@ -15,10 +15,15 @@ export class MainComponent implements AfterViewInit, OnDestroy {
     @ViewChild(TopHostDirective) topHost: TopHostDirective;
 
     constructor(private dynamicComponentService: DynamicComponentService, private service: AuthService) {
+        service.authEvent.subscribe((auth:boolean) => this.reload(auth) )
     }
 
     ngAfterViewInit() {
-        if (this.service.isUserAuthenticated() == true)
+        this.reload(this.service.isUserAuthenticated());
+    }
+
+    private reload(auth: boolean){
+        if (auth)
             this.loadDashboardComponent();
         else
             this.loadLoginComponent();

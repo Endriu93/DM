@@ -1,10 +1,12 @@
-import {Injectable} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {TokenModel} from "../../model/auth/TokenModel";
 
 @Injectable()
 export class AuthService{
 
     private static TOKEN = "token";
+
+    authEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
     isUserAuthenticated() : boolean {
         // TODO check jwt exp date
@@ -16,6 +18,10 @@ export class AuthService{
         if(token)
             return {token: token}
         else return {token: ""};
+    }
+
+    public fireTokenExpired() {
+        this.authEvent.emit(false);
     }
 
     public saveToken(token: TokenModel)

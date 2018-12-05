@@ -38,6 +38,7 @@ import {UsersComponent} from "../component/users/users.component";
 import {AddUserDialog} from "../component/users/add-user/add-user.component";
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from "../service/http/AuthInterceptor";
+import {ResponseInterceptor} from "../service/http/ResponseInterceptor";
 
 
 @NgModule({
@@ -87,6 +88,11 @@ import {AuthInterceptor} from "../service/http/AuthInterceptor";
         {
             provide: HTTP_INTERCEPTORS,
             useClass: AuthInterceptor,
+            multi: true,
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ResponseInterceptor,
             multi: true,
         }
     ],

@@ -35,7 +35,7 @@ export class SideNavComponent {
                     this.loadData(userModel)
                 },
                 err => {
-                    alert("Error from side-nav.component, service is temporary unavailable!");
+                    // alert("Error from side-nav.component, service is temporary unavailable!");
                 }
             )
     }
