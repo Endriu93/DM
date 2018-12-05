@@ -1,4 +1,4 @@
-import {RestConfig} from "./RestConfig";
+import {RestConfig} from "../abstract/RestConfig";
 export class RestConfigLocal extends RestConfig {
 
     public getWebUrl(): string {

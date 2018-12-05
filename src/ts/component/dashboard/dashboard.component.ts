@@ -4,7 +4,7 @@ import {SideNavItem} from "../side-nav/SideNavItem";
 import {ToolbarHandler} from "../toolbar/ToolbarHandler";
 import {DashHostDirective} from "../../directive/DashHostDirective";
 import {DocumentsComponent} from "../documents/documents.component";
-import {DynamicComponentService} from "../../service/view/DynamicComponentService";
+import {DynamicComponentService} from "../../service/impl/DynamicComponentService";
 import {ActivitiesComponent} from "../activities/activities.component";
 import {UsersComponent} from "../users/users.component";
 

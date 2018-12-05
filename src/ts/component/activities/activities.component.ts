@@ -3,7 +3,7 @@
  */
 import {AfterViewInit, Component} from '@angular/core';
 import {ActivityModel} from '../../model/activities/ActivityModel';
-import {RestService} from "../../service/rest/RestService";
+import {RestService} from "../../service/impl/RestService";
 
 @Component({
   selector: 'activitiess',

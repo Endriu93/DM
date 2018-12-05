@@ -4,7 +4,7 @@
 import {Component, Input} from "@angular/core";
 import {SideNavHandler} from "./SideNavHandler";
 import {SideNavItem} from "./SideNavItem";
-import {RestService} from "../../service/rest/RestService";
+import {RestService} from "../../service/impl/RestService";
 import {UserModel} from "../../model/user/UserModel";
 
 @Component({

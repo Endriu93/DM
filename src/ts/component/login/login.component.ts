@@ -1,6 +1,6 @@
 import {Component, EventEmitter} from "@angular/core";
 import {HttpErrorResponse} from "@angular/common/http";
-import {RestService} from "../../service/rest/RestService";
+import {RestService} from "../../service/impl/RestService";
 import {TokenModel} from "../../model/auth/TokenModel";
 
 @Component({

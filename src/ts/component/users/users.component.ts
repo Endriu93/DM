@@ -1,6 +1,6 @@
 import {AfterViewInit, Component} from "@angular/core";
 import {UserModel} from "../../model/user/UserModel";
-import {RestService} from "../../service/rest/RestService";
+import {RestService} from "../../service/impl/RestService";
 import {MatDialog} from "@angular/material";
 import {AddUserDialog} from "./add-user/add-user.component";
 /**

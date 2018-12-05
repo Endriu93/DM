@@ -1,10 +1,10 @@
 import {AfterViewInit, Component, OnDestroy, ViewChild} from "@angular/core";
-import {AuthService} from "../service/view/AuthService";
+import {AuthService} from "../service/impl/AuthService";
 import {TopHostDirective} from "../directive/TopHostDirective";
 import {LoginComponent} from "./login/login.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {TokenModel} from "../model/auth/TokenModel";
-import {DynamicComponentService} from "../service/view/DynamicComponentService";
+import {DynamicComponentService} from "../service/impl/DynamicComponentService";
 
 @Component({
     selector: 'main-component',

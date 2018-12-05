@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from "@angular/common/http";
 import {TokenModel} from "../../model/auth/TokenModel";
-import {RestConfig} from "./RestConfig";
+import {RestConfig} from "../abstract/RestConfig";
 import {Observable} from "rxjs/Observable";
 import {DocumentModel} from "../../model/documents/DocumentModel";
 import {ActivityModel} from "../../model/activities/ActivityModel";

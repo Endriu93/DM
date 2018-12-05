@@ -1,5 +1,5 @@
 import {Directive, ViewContainerRef} from '@angular/core';
-import {DynamicComponentDirective} from "../service/view/DynamicComponentService";
+import {DynamicComponentDirective} from "../service/impl/DynamicComponentService";
 
 @Directive({
     selector: '[top-host]',

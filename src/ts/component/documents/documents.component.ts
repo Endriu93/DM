@@ -2,7 +2,7 @@
  * Created by Andrzej on 06.05.2017.
  */
 import {AfterViewInit, Component} from "@angular/core";
-import {RestService} from "../../service/rest/RestService";
+import {RestService} from "../../service/impl/RestService";
 import {DocumentModel} from "../../model/documents/DocumentModel";
 
 @Component({
