@@ -28,7 +28,6 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatSidenavModule} from "@angular/material/sidenav";
-import {HttpClientModule} from "@angular/common/http";
 import {RestConfig} from "../service/rest/RestConfig";
 import {RestService} from "../service/rest/RestService";
 import {AuthService} from "../service/view/AuthService";
@@ -37,6 +36,8 @@ import {DashHostDirective} from "../directive/DashHostDirective";
 import {DynamicComponentService} from "../service/view/DynamicComponentService";
 import {UsersComponent} from "../component/users/users.component";
 import {AddUserDialog} from "../component/users/add-user/add-user.component";
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AuthInterceptor} from "../service/http/AuthInterceptor";
 
 
 @NgModule({
@@ -83,6 +84,11 @@ import {AddUserDialog} from "../component/users/add-user/add-user.component";
         {provide: RestConfig, useClass: RestConfigLocal},
         {provide: RestService, useClass: RestService},
         {provide: DynamicComponentService, useClass: DynamicComponentService},
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true,
+        }
     ],
     entryComponents: [
         LoginComponent,

@@ -38,7 +38,7 @@ export class LoginComponent {
                         alert("login or password incorrect!");
                     else
                         alert("service is temporary unavailable!");
-                    // console.log("error occured");
+                    console.log(err);
                 }
             )
     }
