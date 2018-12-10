@@ -2,7 +2,8 @@
 <div mat-dialog-content class="flex-outer">
   <div class="flex-container">
     <div class="item">Dokument1.pdf</div>
-    <button mat-raised-button color="primary" class="item">wybierz dokument</button>
+    <button mat-raised-button color="primary" class="item" (click)="addFile()">wybierz dokument</button>
+    <input type="file" #file style="display: none" (change)="onFilesAdded()" multiple />
   </div>
   <div class="flex-container">
     <mat-checkbox>przydziel automatycznie (dokładność: <span class="added">75%</span>)</mat-checkbox>
