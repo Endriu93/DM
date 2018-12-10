@@ -3,7 +3,7 @@
   <div class="flex-container">
     <div class="item">Dokument1.pdf</div>
     <button mat-raised-button color="primary" class="item" (click)="addFile()">wybierz dokument</button>
-    <input type="file" #file style="display: none" (change)="onFilesAdded()" multiple />
+    <input type="file" #file style="display: none" (change)="onFileAdded()"/>
   </div>
   <div class="flex-container">
     <mat-checkbox>przydziel automatycznie (dokładność: <span class="added">75%</span>)</mat-checkbox>
@@ -13,6 +13,6 @@
   </div>
 </div>
 <div mat-dialog-actions class="footer">
-  <button mat-button (click)="dialogRef.close('Option 1')" color="primary" class="bold">Dodaj</button>
+  <button mat-button (click)="ok()" color="primary" class="bold">Dodaj</button>
   <button mat-button (click)="dialogRef.close('Option 2')" class="bold">Anuluj</button>
 </div>

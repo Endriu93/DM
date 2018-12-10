@@ -39,6 +39,7 @@ import {AddUserDialog} from "../component/users/add-user/add-user.component";
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from "../service/http/AuthInterceptor";
 import {ResponseInterceptor} from "../service/http/ResponseInterceptor";
+import {UploadService} from "../service/impl/UploadService";
 
 
 @NgModule({
@@ -94,7 +95,8 @@ import {ResponseInterceptor} from "../service/http/ResponseInterceptor";
             provide: HTTP_INTERCEPTORS,
             useClass: ResponseInterceptor,
             multi: true,
-        }
+        },
+        {provide: UploadService, useClass: UploadService}
     ],
     entryComponents: [
         LoginComponent,
