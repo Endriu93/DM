@@ -1,9 +1,0 @@
-<form class="select">
-  <mat-select placeholder="wybierz kategorię" [(ngModel)]="selectedValue" name="food" class="select">
-    <mat-option *ngFor="let food of foods" [value]="food.value">
-      {{food.viewValue}}
-    </mat-option>
-  </mat-select>
-
-  <!--<p> Selected value: {{selectedValue}} </p>-->
-</form>

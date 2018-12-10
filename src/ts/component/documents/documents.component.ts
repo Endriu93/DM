@@ -4,6 +4,8 @@
 import {AfterViewInit, Component} from "@angular/core";
 import {RestService} from "../../service/impl/RestService";
 import {DocumentModel} from "../../model/documents/DocumentModel";
+import {DocumentAddDialog} from "./add-document/document_add.component";
+import {MatDialog} from "@angular/material";
 
 @Component({
     selector: 'documents',
@@ -11,13 +13,9 @@ import {DocumentModel} from "../../model/documents/DocumentModel";
     styleUrls: ['ts/component/documents/documents.css']
 })
 export class DocumentsComponent implements AfterViewInit {
-    /* documents: DocumentItem[] = [
-     {name: 'Dokument1' , icon: 'folder', category: 'kategoria 1', addedBy: 'User 11'},
-     {name: 'Dokument2' , icon: 'folder', category: 'kategoria 2', addedBy: 'User 11'}
-     ];*/
     documents: DocumentModel[] = [];
 
-    constructor(private rest: RestService) {
+    constructor(private rest: RestService, private dialog: MatDialog) {
     }
 
     ngAfterViewInit(): void {
@@ -31,5 +29,15 @@ export class DocumentsComponent implements AfterViewInit {
                     alert("service is temporary unavailable!");
                 }
             )
+    }
+
+    openDialog(): void {
+        const dialogRef = this.dialog.open(DocumentAddDialog, {
+        });
+
+       /* dialogRef.afterClosed().subscribe(result => {
+            // console.log('The dialog was closed');
+            // this.animal = result;
+        });*/
     }
 }

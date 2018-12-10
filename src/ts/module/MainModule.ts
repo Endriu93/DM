@@ -21,8 +21,8 @@ import {SideNavComponent} from "../component/side-nav/side-nav.component";
 import {ToolbarComponent} from "../component/toolbar/toolbar.component";
 import {DocumentsSearchComponent} from "../component/documents-search/documents-search.component";
 import {ActivitiesComponent} from "../component/activities/activities.component";
-import {DocumentAddButton, DocumentAddDialog} from "../component/add_document/document_add.component";
-import {SelectCategoryComponent} from "../component/add_document/select_category/select_category.component";
+import {DocumentAddButton, DocumentAddDialog} from "../component/documents/add-document/document_add.component";
+import {SelectCategoryComponent} from "../component/documents/add-document/select-category/select_category.component";
 import {PanelComponent} from "../component/panel/app.panel.component";
 import {MatIconModule} from "@angular/material/icon";
 import {MatListModule} from "@angular/material/list";
@@ -102,7 +102,8 @@ import {ResponseInterceptor} from "../service/http/ResponseInterceptor";
         DocumentsComponent,
         ActivitiesComponent,
         UsersComponent,
-        AddUserDialog
+        AddUserDialog,
+        DocumentAddDialog
     ]
 })
 export class AppModule {
