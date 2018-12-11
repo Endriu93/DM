@@ -1,0 +1,36 @@
+<div class="header-container">
+  <h3 class="header-item">Lista kategorii</h3>
+  <button mat-fab class="header-item" (click)="openDialog()">
+    <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+  </button>
+</div><mat-divider></mat-divider>
+<documents-search></documents-search>
+<mat-divider></mat-divider>
+
+<mat-list>
+  <mat-list-item class="list_item">
+    <div class="flex-container">
+      <div mat-line class="document_name">nazwa kategorii</div>
+      <!--<div mat-line class="document_category">kategoria</div>-->
+      <!--<div mat-line class="document_added_by">dodany przez</div>-->
+    </div>
+  </mat-list-item>
+  <mat-list-item *ngFor="let item of categories" class="list_item" >
+    <mat-icon mat-list-icon>{{item.icon}}</mat-icon>
+    <div class="flex-container">
+      <div mat-line class="document_name">{{item.name}}</div>
+      <!--<div mat-line class="document_category">{{item.category}}</div>-->
+      <!--<div mat-line class="document_added_by">{{item.addedBy}}</div>-->
+    </div>
+  </mat-list-item>
+</mat-list>
+
+<!--<md-grid-list cols="4">
+  <md-grid-tile
+    *ngFor="let item of documents"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+    [style.background]="tile.color">
+    {{tile.text}}
+  </md-grid-tile>
+</md-grid-list>-->

@@ -6,6 +6,7 @@ import {SideNavItem} from "./SideNavItem";
 export interface SideNavHandler{
     loadActsComponent(): void
     loadDocsComponent(): void
+    loadCatsComponent(): void
     loadUsersComponent(): void
     logout(): void
 }

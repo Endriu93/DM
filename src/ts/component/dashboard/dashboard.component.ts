@@ -7,6 +7,7 @@ import {DynamicComponentService} from "../../service/impl/DynamicComponentServic
 import {ActivitiesComponent} from "../activities/activities.component";
 import {UsersComponent} from "../users/users.component";
 import {AuthService} from "../../service/impl/AuthService";
+import {CategoriesComponent} from "../categories/categories.component";
 
 @Component({
     templateUrl: 'ts/component/dashboard/dashboard.html',
@@ -47,6 +48,11 @@ export class DashboardComponent implements SideNavHandler, ToolbarHandler, After
 
     loadDocsComponent() {
         this.dynamicComponentService.loadComponent(DocumentsComponent, this.dashHost)
+        this.toggleDrawer()
+    }
+
+    loadCatsComponent() {
+        this.dynamicComponentService.loadComponent(CategoriesComponent, this.dashHost)
         this.toggleDrawer()
     }
 

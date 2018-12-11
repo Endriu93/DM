@@ -1,0 +1,43 @@
+.flex-container {
+  /*height: 100%;*/
+  /*padding: 0;*/
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  /*width: 100%;*/
+}
+
+.flex-outer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer {
+  flex-direction: row;
+  align-items: center;
+  align-content: flex-end;
+}
+
+.item {
+  margin: 10px;
+}
+
+.added {
+  color: darkgreen;
+}
+
+.bold {
+  font-weight: bold;
+}

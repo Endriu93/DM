@@ -40,6 +40,8 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from "../service/http/AuthInterceptor";
 import {ResponseInterceptor} from "../service/http/ResponseInterceptor";
 import {UploadService} from "../service/impl/UploadService";
+import {CategoriesComponent} from "../component/categories/categories.component";
+import {CategoryAddDialog} from "../component/categories/add-category/category_add.component";
 
 
 @NgModule({
@@ -71,13 +73,15 @@ import {UploadService} from "../service/impl/UploadService";
         ToolbarComponent,
         DocumentsSearchComponent,
         ActivitiesComponent,
+        CategoriesComponent,
         // DocumentAddButton,
         DocumentAddDialog,
         SelectCategoryComponent,
         PanelComponent,
         DashHostDirective,
         UsersComponent,
-        AddUserDialog
+        AddUserDialog,
+        CategoryAddDialog
     ],
     // component, which will bootstrap index.html
     bootstrap: [MainComponent],
@@ -103,9 +107,11 @@ import {UploadService} from "../service/impl/UploadService";
         DashboardComponent,
         DocumentsComponent,
         ActivitiesComponent,
+        CategoriesComponent,
         UsersComponent,
         AddUserDialog,
-        DocumentAddDialog
+        DocumentAddDialog,
+        CategoryAddDialog
     ]
 })
 export class AppModule {

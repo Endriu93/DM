@@ -21,6 +21,7 @@ export class SideNavComponent {
     readonly ActsID = 2;
     readonly UsersID: 3;
     readonly LogoutID = 4;
+    readonly CatsID = 5;
 
     userName: string = '---';
     menu1: SideNavItem[] = [];
@@ -44,8 +45,9 @@ export class SideNavComponent {
         this.userName = userModel.login;
 
         this.menu1 = [
-            {id: this.DocsID, name: 'Lista Dokumentów', icon: 'folder_open'},
-            {id: this.ActsID, name: 'Lista Aktywności', icon: 'event'}
+            {id: this.DocsID, name: 'Lista Dokumentów', icon: 'description'},
+            {id: this.ActsID, name: 'Lista Aktywności', icon: 'event'},
+            {id: this.CatsID, name: 'Lista Kategorii', icon: 'folder_open'}
         ];
 
         if (userModel.admin) this.menu1.push({id: this.UsersID, name: 'Lista Użytkowników', icon: 'account_circle'})
@@ -54,7 +56,7 @@ export class SideNavComponent {
     }
 
     onItemClick(item: SideNavItem): any {
-        switch (item.id ) {
+        switch (item.id) {
             case this.LogoutID: {
                 this.menuHandler.logout()
                 break;
@@ -65,6 +67,10 @@ export class SideNavComponent {
             }
             case this.DocsID: {
                 this.menuHandler.loadDocsComponent()
+                break;
+            }
+            case this.CatsID: {
+                this.menuHandler.loadCatsComponent()
                 break;
             }
             case this.UsersID: {

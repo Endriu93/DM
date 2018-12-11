@@ -32,6 +32,10 @@ export class RestService {
         return this.http.get<ActivityModel[]>(this.url("acts"));
     }
 
+    getCategories(): Observable<ActivityModel[]> {
+        return this.http.get<ActivityModel[]>(this.url("categories"));
+    }
+
     getLoggedUser(): Observable<UserModel> {
         return this.http.get<UserModel>(this.url("users/logged"));
     }
