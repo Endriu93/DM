@@ -6,6 +6,7 @@ import {Observable} from "rxjs/Observable";
 import {DocumentModel} from "../../model/documents/DocumentModel";
 import {ActivityModel} from "../../model/activities/ActivityModel";
 import {UserModel} from "../../model/user/UserModel";
+import {CategoryModel} from "../../model/categories/CategoryModel";
 
 @Injectable()
 export class RestService {
@@ -32,8 +33,12 @@ export class RestService {
         return this.http.get<ActivityModel[]>(this.url("acts"));
     }
 
-    getCategories(): Observable<ActivityModel[]> {
+    getCategories(): Observable<CategoryModel[]> {
         return this.http.get<ActivityModel[]>(this.url("categories"));
+    }
+
+    addCategory(category: CategoryModel): Observable<CategoryModel> {
+        return this.http.post<CategoryModel>(this.url("categories"),category);
     }
 
     getLoggedUser(): Observable<UserModel> {

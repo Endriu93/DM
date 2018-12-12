@@ -33,7 +33,7 @@ export class CategoriesComponent implements AfterViewInit {
     }
 
     openDialog(): void {
-        const dialogRef = this.dialog.open(CategoryAddDialog, {
+        const dialogRef = this.dialog.open(CategoryAddDialog, {data: {name: ""}
         });
 
         /* dialogRef.afterClosed().subscribe(result => {
